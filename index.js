@@ -1,5 +1,14 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+      const compareNumbers = [...array];
+  
+    for (const element of array) {
+      const betterHalf = target - element;
+      if (betterHalf in compareNumbers) return true;
+      compareNumbers[element] = true;
+    }
+  
+    return false;
 }
 
 /* 
